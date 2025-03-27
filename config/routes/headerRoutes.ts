@@ -1,5 +1,3 @@
-// headerRoutes.ts
-
 import { RouteProps } from "@/lib/types";
 
 // Définir les routes principales
