@@ -1,0 +1,21 @@
+name: "Assign Issues and Pull Requests"
+
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+jobs:
+  auto-assign:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - name: "Auto-assign issue"
+        uses: pozil/auto-assign-issue@v2
+        with:
+          assignees: DavidDevPro
+          allowSelfAssign: true
+          numOfAssignee: 1
