@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frontend du Portfolio DavidWebProjects
 
-## Getting Started
+Le frontend du Portfolio DavidWebProjects utilise Next.js + Tailwind.css et plusieurs dépendances pour fournir une interface utilisateur réactive et intuitive pour mon site de Freelance.
 
-First, run the development server:
+## Caractéristiques
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Réactivité :** Conçu pour offrir une expérience utilisateur fluide et réactive sur divers appareils.
+- **Adaptabilité :** Fonctionne en local avec WampServer pour le développement et avec une API distante en production.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environnement de Développement
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Pour démarrer le serveur de développement du frontend :
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Exécutez la commande suivante : npm run install
+2. Remplir les variables d'environnement
+3. Remplir les variables pour l'API
+4. Remplir le chemin de basename (production)
+5. Exécutez la commande suivante : npm run dev
 
-## Learn More
+Ceci lancera le serveur de développement, rendant l'application accessible localement pour les tests et le développement.
 
-To learn more about Next.js, take a look at the following resources:
+## Configuration API
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **En local :** L'application est configurée pour utiliser une API locale liée à WampServer. Pour configurer correctement l'adresse de l'API en local, veuillez consulter le README dans le dossier du backend pour les instructions détaillées.
+- **En production :** La version de production utilise l'API distante accessible à l'adresse `https://portfolio.davidwebprojects.fr/api`. Cette configuration permet une intégration transparente avec les services backend en production.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Prérequis
 
-## Deploy on Vercel
+- Node.js (Version recommandée : 20.x ou plus) pour exécuter le serveur de développement.
+- WampServer ou un environnement similaire pour le développement local avec PHP et MySQL.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## À Propos
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Le frontend de DavidWebProjects représente une partie cruciale de l'expérience utilisateur, offrant une interface élégante, fonctionnelle et intuitive pour mon site de Freelance. Pour plus d'informations sur les mises à jour et les fonctionnalités, restez connecté
