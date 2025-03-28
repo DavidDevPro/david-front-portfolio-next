@@ -36,7 +36,7 @@ export const LoginForm: React.FC = () => {
     const expirationTime = Cookies.get('authTokenExpiration');
 
     if (token && expirationTime && new Date().getTime() < parseInt(expirationTime)) {
-      router.push("/admin-dashboard");
+      router.push("/admin");
     } else {
       Cookies.remove('authToken');
       Cookies.remove('authTokenExpiration');
@@ -83,7 +83,7 @@ export const LoginForm: React.FC = () => {
       Cookies.set('profilePicture', data.urlPictureProfil, { expires: 1 });
 
       showFormSuccess("Connexion réussie avec succès !");
-      router.push('/admin-dashboard');
+      router.push('/admin');
 
     } catch (error) {
       handleError(error);
