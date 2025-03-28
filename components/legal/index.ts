@@ -1,2 +1,2 @@
 export { MentionSections } from './MentionSections';
-// export { PrivacySections } from './PrivacySections';
+export { PrivacySections } from './PrivacySections';
