@@ -16,14 +16,14 @@ export default function ResetPasswordPage() {
     const email = decodeURIComponent(atob(encodedEmail)); // Décoder l'email
 
     return (
-      <section className="-mt-[100px] flex-grow flex items-center justify-center px-2">
+      <section className="flex-grow flex items-center justify-center px-2">
         <AuthSection formType="reset-password" token={token} email={email} />
       </section>
     );
   }
 
   return (
-    <section className="-mt-[100px] flex-grow flex items-center justify-center px-2">
+    <section className="flex-grow flex items-center justify-center px-2">
       <p>Invalid URL</p> {/* Gérer les URL invalides */}
     </section>
   );
