@@ -26,7 +26,7 @@ export function NavLinkIcon({ title, icon, label, href, closeNav, onClick }: Nav
             onClick={handleClick}
             variant={isActive ? 'default' : 'ghost'}
             size="icon"
-            className={`relative h-12 w-12 transition-colors ${isActive ? 'bg-destructive-foreground text-background' : 'text-background hover:bg-destructive-foreground hover:text-background'}`}
+            className={`relative h-12 w-12 transition-colors ${isActive ? 'bg-destructive-foreground text-background' : 'text-background bg-secondary hover:bg-secondary/70 hover:text-background'}`}
           >
             {icon}
             <span className="sr-only">{title}</span>
@@ -36,7 +36,7 @@ export function NavLinkIcon({ title, icon, label, href, closeNav, onClick }: Nav
             <Button
               variant={isActive ? 'dashboard' : 'ghost'}
               size="icon"
-              className={`relative h-12 w-12 transition-colors ${isActive ? 'bg-destructive-foreground text-background' : 'text-background hover:bg-destructive-foreground hover:text-background'}`}
+              className={`relative h-12 w-12 transition-colors ${isActive ? 'bg-accent hover:bg-accent/90 text-background' : 'text-background bg-primary hover:bg-primary/70 hover:text-background'}`}
             >
               {icon}
               <span className="sr-only">{title}</span>

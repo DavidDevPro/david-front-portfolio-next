@@ -44,7 +44,7 @@ export function NavLink({ title, icon, label, href, closeNav, subLink = false, b
         className={cn(
           'w-full h-12 justify-start text-wrap rounded-none px-6 transition-colors',
           isActive
-            ? 'bg-accent text-background hover:bg-accent/90h'
+            ? 'bg-accent text-background hover:bg-accent/90'
             : 'text-card bg-primary hover:bg-primary/70 hover:text-background',
           subLink && 'h-10 w-full border-l border-l-primary px-2'
         )}
