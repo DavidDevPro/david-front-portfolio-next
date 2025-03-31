@@ -31,6 +31,7 @@ export const NavBarMobile: React.FC<NavBarMobileProps> = ({ routes }) => {
     setIsOpen(false); // Ferme le menu après un clic
   };
 
+
   return (
     <div className="flex items-center lg:hidden">
       <Sheet open={isOpen} onOpenChange={handleMenuToggle}>
@@ -59,7 +60,7 @@ export const NavBarMobile: React.FC<NavBarMobileProps> = ({ routes }) => {
                 </SheetDescription>
                 <Link
                   href="/"
-                  className="flex items-center text-accent font-montserrat gap-2 font-medium text-4xl"
+                  className="flex items-center text-accent font-montserrat gap-2 font-medium text-4xl "
                 >
                   <Image
                     src="/images/logos/logo.png"
