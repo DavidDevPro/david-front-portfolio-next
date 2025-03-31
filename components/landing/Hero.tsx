@@ -70,7 +70,7 @@ export const Hero: React.FC = () => {
       {/* Background */}
       <div
         ref={bgRef}
-        className="before:absolute before:inset-0 before:bg-gradient-to-b before:from-[#192846]/10 before:via-[#192846]/35 before:to-[#192846]/60 inset-0 mt-[100px] fixed top-0 left-0 w-full min-h-[70vh] -z-50 border-none m-0"
+        className="before:absolute before:inset-0 before:bg-gradient-to-b before:from-[#192846]/10 before:via-[#192846]/35 before:to-[#192846]/60 inset-0 mt-[100px] fixed top-0 left-0 w-full min-h-[70vh] -z-50 border-none m-0 will-change-opacity"
         aria-hidden="true"
       >
         <picture>
@@ -121,7 +121,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Main Image */}
-        <div ref={imgRef} className="relative z-10">
+        <div ref={imgRef} className="relative z-10 will-change-opacity">
           <picture>
             <source srcSet="/images/img/boss.webp" type="image/webp" />
             <source srcSet="/images/img/boss.png" type="image/png" />
