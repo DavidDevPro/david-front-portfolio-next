@@ -28,7 +28,7 @@ export interface PrimaryButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
   disabled?: boolean;
-  variant?: "primaryPortfolio" | "secondaryPortfolio" | "primaryAdmin" | "secondaryAdmin";
+  variant?: "primaryPortfolio" | "secondaryPortfolio" | "thirdPortfolio" |"primaryAdmin" | "secondaryAdmin";
   type?: "button" | "submit" | "reset";
   className?: string;
   href?: string | { pathname: string; query?: ParsedUrlQueryInput };

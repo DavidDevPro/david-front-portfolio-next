@@ -22,6 +22,12 @@ const variants = {
     "hover:from-gray-700 hover:to-gray-600 hover:ring-2 hover:ring-from-gray-700 hover:ring-to-gray-600 hover:ring-offset-2",
     "px-6 py-4 rounded-md shadow-md shadow-gray-500/50"
   ),
+  thirdPortfolio: cn(
+    "group relative flex items-center justify-center gap-2 overflow-hidden text-xl font-medium text-accent hover:text-secondary",
+    " transition-all duration-500 ease-out",
+    "border border-accent/80 hover:border-secondary bg-secondary/80 hover:bg-accent/80",
+    "px-8 py-7 rounded-full shadow-md shadow-gray-600/50"
+  ),
   primaryAdmin: cn(
     "group relative w-auto flex items-center justify-center gap-2 overflow-hidden text-sm font-semibold tracking-wide text-card",
     "transform-gpu ring-offset-current transition-all duration-300 ease-out",
@@ -61,7 +67,7 @@ export const PrimaryButton = React.forwardRef<
     const buttonClasses = cn(
       selectedClasses,
       "whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-      "disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10",
+      "disabled:pointer-events-none disabled:opacity-50 hover:bg-accent/80 h-10",
       className
     );
 
@@ -87,7 +93,7 @@ export const PrimaryButton = React.forwardRef<
                 aria-hidden="true"
               />
             ) : (
-              <span className="flex items-center">{children}</span>
+              <span className="flex gap-3 items-center">{children}</span>
             )}
           </a>
         </Link>

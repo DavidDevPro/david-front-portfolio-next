@@ -94,9 +94,9 @@ export const Hero: React.FC = () => {
         >
           <div >
             <PrimaryButton
+              variant="thirdPortfolio"
               href={heroData.contactButtonHref}
               aria-label="Page de contact"
-              className="h-16 hover:border-card hover:text-secondary hover:bg-accent/80 hover:scale-102 will-change-transform"
             >
               <Image
                 src="/images/icons/enveloppe.png"
@@ -112,12 +112,11 @@ export const Hero: React.FC = () => {
 
           <div>
             <PrimaryButton
-
+              variant="thirdPortfolio"
               href={heroData.websiteButtonHref}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="David Web Projects site"
-              className="h-16 hover:border-card hover:text-secondary hover:bg-accent/80 hover:scale-102 will-change-transform "
             >
               <Image
                 src="/images/logos/logo.png"

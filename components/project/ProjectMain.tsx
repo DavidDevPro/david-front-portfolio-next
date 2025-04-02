@@ -30,10 +30,11 @@ export const ProjectMain = ({ project }: ProjectMainProps) => {
         <div className="flex flex-wrap justify-center gap-8 mt-8">
           {project.link && (
             <PrimaryButton
+              variant="thirdPortfolio"
               href={project.link}
               target="_blank"
               aria-label="Page du site web"
-              className="h-16 hover:border-card hover:text-secondary hover:bg-accent/80 hover:scale-102 will-change-transform"
+              className=" border-secondary hover:border-accent hover:text-secondary bg-accent text-secondary hover:scale-102 will-change-transform"
             >
               <Image
                 src="/images/logos/logo.png"

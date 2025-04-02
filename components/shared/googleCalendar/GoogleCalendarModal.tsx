@@ -25,8 +25,9 @@ export const GoogleCalendarModal: React.FC<GoogleCalendarModalProps> = ({
     <Dialog open={isOpen} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
         <PrimaryButton
+          variant="thirdPortfolio"
           aria-label="prendre un rendez-vous"
-          className="h-16 hover:border-card hover:text-secondary hover:bg-primary/70 hover:scale-102 will-change-transform"
+          className="h-16 hover:border-card hover:text-secondary hover:bg-primary/70 "
         >
           <Image
             src="/images/icons/agenda.png"
@@ -35,7 +36,7 @@ export const GoogleCalendarModal: React.FC<GoogleCalendarModalProps> = ({
             height={80}
             loading="eager"
             priority
-            className="relative z-50 animate-contactEnvelope shrink-0 w-[40px] h-[40px] will-change-transform"
+            className="relative z-50 animate-contactEnvelope mr-2 shrink-0 w-[40px] h-[40px] will-change-transform"
             style={{ animationDuration: "12s" }} />
           Prendre un rendez-vous
         </PrimaryButton>

@@ -24,11 +24,12 @@ export function ProjectCTA() {
         <div className="flex flex-col sm:flex-row gap-8 justify-center">
           {/* Bouton 1 : "Me Contacter" */}
           <PrimaryButton
+            variant="thirdPortfolio"
             href="https://portfolio.davidwebprojects.fr/#contact"
             target="_blank"
             aria-label="Page du site web"
             rel="noopener noreferrer"
-            className="max-w-64 sm:max-w-96 mx-auto sm:mx-0 h-16 hover:border-card hover:text-secondary hover:bg-accent/80 hover:scale-102 will-change-transform"
+            className=" border-secondary hover:border-accent hover:text-secondary bg-accent text-secondary hover:scale-102 will-change-transform"
           >
             <Image
               src="/images/icons/enveloppe.png"
@@ -43,11 +44,12 @@ export function ProjectCTA() {
 
           {/* Bouton 2 : "Demander un devis" */}
           <PrimaryButton
+            variant="thirdPortfolio"
             href="https://davidwebprojects.fr/formules"
             target="_blank"
             aria-label="Page du site web"
             rel="noopener noreferrer"
-            className="max-w-72 sm:max-w-96 mx-auto sm:mx-0 h-16 hover:border-card hover:text-secondary hover:bg-accent/80 hover:scale-102 will-change-transform"
+            className=" border-secondary hover:border-accent hover:text-secondary bg-accent text-secondary hover:scale-102 will-change-transform"
           >
             <Image
               src="/images/icons/devis.png"
