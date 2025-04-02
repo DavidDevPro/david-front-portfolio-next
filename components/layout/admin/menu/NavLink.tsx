@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useEffect, useState } from "react";
 import useCheckActiveNav from '@/hooks/use-check-active-nav';
-import { NavLinkProps } from '@/lib/types/layoutDashboard';
+import { NavLinkProps } from '@/lib/types/admin/layoutDashboard';
 
 // Lien simple sans sous-menu
 export function NavLink({ title, icon, label, href, closeNav, subLink = false, badge, onClick }: NavLinkProps) {

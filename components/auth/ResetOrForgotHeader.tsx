@@ -1,6 +1,6 @@
 "use client";
 
-import { TooltipLink } from "../shared";
+import { TooltipLink } from "@/components/shared";
 
 export const ResetOrForgotHeader = () => {
     return (

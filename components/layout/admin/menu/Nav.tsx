@@ -6,7 +6,7 @@ import { NavLinkIcon } from './NavLinkIcon';
 import { NavLinkIconDropdown } from './NavLinkIconDropdown';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { cn } from '@/lib/utils';
-import { NavProps, SideLink } from '@/lib/types/layoutDashboard';
+import { NavProps, SideLink } from '@/lib/types/admin/layoutDashboard';
 
 export function Nav({ links, isCollapsed, className, closeNav }: NavProps) {
   const renderLink = ({ sub, href, onClick, ...rest }: SideLink) => {

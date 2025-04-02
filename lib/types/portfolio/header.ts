@@ -7,6 +7,7 @@ export interface NavBarMobileProps {
   routes: RouteProps[];
 }
 
+
 export interface NavBarDesktopProps {
   routes: RouteProps[];
 }

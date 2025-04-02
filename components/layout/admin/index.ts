@@ -10,3 +10,6 @@ export { NavLink } from './menu/NavLink';
 export { NavLinkDropdown } from './menu/NavLinkDropdown';
 export { NavLinkIcon } from './menu/NavLinkIcon';
 export { NavLinkIconDropdown } from './menu/NavLinkIconDropdown';
+
+export { PageLayoutSettingsScreen } from './settings/PageLayoutSettingsScreen';
+export { SidebarNav } from './settings/menu/SidebarNav';

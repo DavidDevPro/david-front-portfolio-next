@@ -1,4 +1,4 @@
-import { HeroDataProps } from "@/lib/types/heroProps";
+import { HeroDataProps } from "@/lib/types/heroDataProps";
 
 export const heroData: HeroDataProps = {
   heading: "Bonjour,",

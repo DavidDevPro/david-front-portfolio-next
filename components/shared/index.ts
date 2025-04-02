@@ -7,3 +7,4 @@ export { CalendarIframe } from './googleCalendar/CalendarIframe';
 export { TooltipLink } from './TooltipLink';
 export {TechnologiesUsed} from '../shared/TechnologiesUsed';
 export {FooterLinks} from './FooterLinks';
+export { TooltipIconWrapper } from './TooltipIconWrapper';

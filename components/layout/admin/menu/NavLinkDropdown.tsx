@@ -4,7 +4,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/component
 import { cn } from '@/lib/utils';
 import useCheckActiveNav from '@/hooks/use-check-active-nav';
 import { NavLink } from './NavLink';
-import { NavLinkDropdownProps } from '@/lib/types/layoutDashboard';
+import { NavLinkDropdownProps } from '@/lib/types/admin/layoutDashboard';
 
 export function NavLinkDropdown({ title, icon, label, sub, closeNav }: NavLinkDropdownProps) {
   const { checkActiveNav } = useCheckActiveNav();

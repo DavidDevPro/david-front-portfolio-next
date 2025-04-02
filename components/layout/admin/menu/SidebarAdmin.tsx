@@ -9,7 +9,7 @@ import { Nav } from "@/components/layout/admin";
 import { cn } from '@/lib/utils';
 import { useSideLinks } from "@/config/routes/sidebarRoutes";
 import { APP_NAME } from '@/config/config';
-import { SidebarProps } from '@/lib/types/layoutDashboard';
+import { SidebarProps } from '@/lib/types/admin/layoutDashboard';
 
 export const SidebarAdmin: React.FC<SidebarProps> = ({ isCollapsed, setIsCollapsed }) => {
     const [navOpened, setNavOpened] = useState(false);

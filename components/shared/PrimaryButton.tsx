@@ -1,8 +1,41 @@
+"use client";
+
 import React from "react";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import { Loader } from "lucide-react";
 import { PrimaryButtonProps } from "@/lib/types";
+
+// Styles par variante
+const variants = {
+  primaryPortfolio: cn(
+    "group relative w-auto flex items-center justify-center gap-2 overflow-hidden text-sm font-semibold tracking-wide",
+    "transform-gpu ring-offset-current transition-all duration-300 ease-out",
+    "bg-card text-primary border-2 border-primary",
+    "hover:bg-primary hover:text-card hover:ring-2 hover:ring-primary hover:ring-offset-2",
+    "px-6 py-4 rounded-md shadow-md shadow-gray-500/50"
+  ),
+  secondaryPortfolio: cn(
+    "group relative w-auto flex items-center justify-center gap-2 overflow-hidden text-sm font-semibold tracking-wide",
+    "transform-gpu ring-offset-current transition-all duration-300 ease-out",
+    "border border-gray-600 bg-gradient-to-r from-gray-800 to-gray-700",
+    "hover:from-gray-700 hover:to-gray-600 hover:ring-2 hover:ring-from-gray-700 hover:ring-to-gray-600 hover:ring-offset-2",
+    "px-6 py-4 rounded-md shadow-md shadow-gray-500/50"
+  ),
+  primaryAdmin: cn(
+    "group relative w-auto flex items-center justify-center gap-2 overflow-hidden text-sm font-semibold tracking-wide text-card",
+    "transform-gpu ring-offset-current transition-all duration-300 ease-out",
+    "bg-primary hover:ring-2 hover:ring-primary hover:ring-offset-2",
+    "px-8 py-5 rounded-md"
+  ),
+  secondaryAdmin: cn(
+    "group relative w-auto flex items-center justify-center gap-2 overflow-hidden text-sm font-semibold tracking-wide",
+    "transform-gpu ring-offset-current transition-all duration-300 ease-out",
+    "bg-card text-primary border-2 border-primary",
+    "hover:bg-primary hover:text-card hover:ring-2 hover:ring-primary hover:ring-offset-2",
+    "px-6 py-4 rounded-md"
+  ),
+};
 
 export const PrimaryButton = React.forwardRef<
   HTMLAnchorElement | HTMLButtonElement,
@@ -10,87 +43,80 @@ export const PrimaryButton = React.forwardRef<
 >(
   (
     {
+      isLoading = false,
       children,
+      onClick,
+      disabled = false,
+      variant = "primaryPortfolio",
+      className,
       href,
       target,
       rel,
-      className = "",
-      isLoading = false,
-      disabled = false,
-      onClick,
-      textColor = "text-card",
-      bgColor = "bg-secondary/95",
-      borderColor = "border-accent",
-      gap = "gap-4",
-      px = "px-6 md:px-8 lg:px-12", // Responsive padding
-      py = "py-2 md:py-3 lg:py-4",
-      fontFamily = "font-poppins",
-      fontSize = "text-base md:text-lg lg:text-xl", // Taille adaptative
-      fontWeight = "font-semibold",
-      shadow = "shadow-sm ",
-      rounded = "rounded-full",
+      type,
+      ...props
     },
     ref
   ) => {
+    const selectedClasses = variants[variant];
     const buttonClasses = cn(
-      "relative flex items-center justify-center overflow-hidden transition-all duration-500 border",
-      "disabled:opacity-50 disabled:pointer-events-none group",
-      textColor,
-      bgColor,
-      borderColor,
-      gap,
-      px,
-      py,
-      fontFamily,
-      fontSize,
-      fontWeight,
-      shadow,
-      rounded
+      selectedClasses,
+      "whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+      "disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10",
+      className
     );
 
-    // Effet lumineux fluide
-    const spinAnimation = (
-      <span className="absolute inset-0 w-full h-full animate-spinSlow bg-gradient-to-r from-white/10 via-transparent to-white/10 pointer-events-none" />
+    const animationSpan = (
+      <span className="absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform-gpu bg-card opacity-10 transition-all duration-1000 ease-out group-hover:-translate-x-96 dark:bg-black" />
     );
 
-    const spinActive = (
-      <span className="absolute top-1/2 -left-10 w-[120%] h-[80%] bg-gradient-to-r from-transparent via-card/10 to-transparent transform -translate-x-full -translate-y-1/2 rotate-[70deg] transition-transform duration-1000 ease-out group-hover:translate-x-full" />
-    );
-
+    // Cas lien
     if (href) {
       return (
-        <Link
-          href={href}
-          passHref
-          target={target}
-          rel={rel}
-          className={cn(buttonClasses, className)}
-          ref={ref as React.Ref<HTMLAnchorElement>}
-        >
-          {spinAnimation}
-          {spinActive}
-          {isLoading && <Loader className="mr-2 h-4 w-4 animate-spin shrink-0" />}
-          <span className={cn("relative flex items-center", gap)}>{children}</span>
+        <Link href={href} passHref legacyBehavior>
+          <a
+            ref={ref as React.Ref<HTMLAnchorElement>}
+            className={buttonClasses}
+            target={target}
+            rel={rel}
+            {...props}
+          >
+            {animationSpan}
+            {isLoading ? (
+              <Loader
+                className="mr-2 h-4 w-4 animate-spin shrink-0"
+                aria-hidden="true"
+              />
+            ) : (
+              <span className="flex items-center">{children}</span>
+            )}
+          </a>
         </Link>
       );
     }
 
+    // Cas bouton
     return (
       <button
         ref={ref as React.Ref<HTMLButtonElement>}
+        type={type ?? "button"}
         onClick={onClick}
+        aria-disabled={disabled || isLoading}
         disabled={disabled || isLoading}
-        className={cn(buttonClasses, className)}
+        className={buttonClasses}
+        {...props}
       >
-        {spinAnimation}
-        {spinActive}
-        {isLoading && <Loader className="mr-2 h-4 w-4 animate-spin shrink-0" />}
-        <span className={cn("relative flex items-center", gap)}>{children}</span>
+        {animationSpan}
+        {isLoading ? (
+          <Loader
+            className="mr-2 h-4 w-4 animate-spin shrink-0"
+            aria-hidden="true"
+          />
+        ) : (
+          <span className="flex items-center">{children}</span>
+        )}
       </button>
     );
   }
 );
 
 PrimaryButton.displayName = "PrimaryButton";
-
-

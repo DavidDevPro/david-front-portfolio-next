@@ -5,7 +5,7 @@ import {
   IconChartLine,
 } from '@tabler/icons-react';
 import { FaSignOutAlt } from "react-icons/fa";
-import { SideLink } from '@/lib/types/layoutDashboard';
+import { SideLink } from '@/lib/types/admin/layoutDashboard';
 import { useAuthStore } from '@/lib/store';
 import { useMemo } from 'react';
 import { BsClipboardData } from 'react-icons/bs';
@@ -24,7 +24,7 @@ export const useSideLinks = (): SideLink[] => {
       },
       {
         title: 'Projets',
-        href: '/admin/projets',
+        href: '/admin/projects',
         icon: <BsClipboardData size={24} />,
       },
       {

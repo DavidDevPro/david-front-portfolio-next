@@ -1,8 +1,6 @@
 import { PageLayoutScreen } from "@/components/layout/common";
+import { LandingLayoutProps } from "@/lib/types";
 
-interface LandingLayoutProps {
-  children: React.ReactNode;
-}
 
 export default async function AboutLayout({ children }: LandingLayoutProps) {
   return <PageLayoutScreen>{children}</PageLayoutScreen>;

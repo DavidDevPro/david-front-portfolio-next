@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import useCheckActiveNav from '@/hooks/use-check-active-nav';
 import Link from 'next/link';
-import { NavLinkIconDropdownProps } from '@/lib/types/layoutDashboard';
+import { NavLinkIconDropdownProps } from '@/lib/types/admin/layoutDashboard';
 
 export function NavLinkIconDropdown({ title, icon, label, sub, closeNav }: NavLinkIconDropdownProps) {
   const { checkActiveNav } = useCheckActiveNav();
