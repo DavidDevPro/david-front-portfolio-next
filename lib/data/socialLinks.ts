@@ -1,5 +1,5 @@
 // data/socialLinks.ts
-import { LuFacebook, LuGithub, LuInstagram, LuLinkedin, LuTwitter } from "react-icons/lu";
+import { LuFacebook, LuGithub, LuInstagram, LuLinkedin } from "react-icons/lu";
 
 
 // Les liens de réseaux sociaux
