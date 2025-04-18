@@ -26,7 +26,7 @@ export const AuthSection = ({ formType, token, email }: AuthSectionProps) => {
     <div className="flex h-screen w-full p-6">
       <div className="flex w-full group bg-secondary/95 border border-gray-400 overflow-hidden rounded-3xl shadow-lg shadow-gray-400/50">
         {/* Section gauche */}
-        <div className="relative z-0 bg-fixed before:absolute before:inset-0 before:bg-gradient-to-b before:from-[#192846]/50 before:via-[#192846]/65 before:to-[#192846]/90 w-1/2 flex justify-center items-center ">
+        <div className="relative z-0 bg-fixed before:absolute before:inset-0 before:bg-gradient-to-b before:from-[#192846]/5 before:via-[#192846]/40 before:to-[#192846]/50 w-1/2 flex justify-center items-center ">
           {/* Titre sur l'image */}
           <div className="absolute z-20 bg-secondary/85 px-6 py-3 rounded-xl shadow-sm shadow-gray-300/50 border-gray-300 ">
             <h2 className="text-4xl font-bold text-primary text-center">Administration</h2>
@@ -35,7 +35,7 @@ export const AuthSection = ({ formType, token, email }: AuthSectionProps) => {
 
           {/* Image de fond assombrie */}
           <Image
-            src="/images/img/admin.jpg"
+            src="/images/img/hero-large.webp"
             alt={`${APP_NAME} - Image de la page de connexion`}
             width={1618}
             height={1080}
