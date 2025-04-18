@@ -1,8 +1,8 @@
 import { create } from "zustand";
 import Cookies from "js-cookie";
 import { logoutUser } from "@/lib/api/authApi";
-// import { useDashboardStore } from "@/lib/store";
 import { AuthState } from "@/lib/types/auth";
+import { useDashboardStore } from "./useDashboardStore";
 
 export const useAuthStore = create<AuthState>((set) => ({
   token: null,
@@ -13,26 +13,23 @@ export const useAuthStore = create<AuthState>((set) => ({
   isLoggingOut: false,
   isClientLoaded: false,
 
-  // Définir le token lors de la connexion
   setToken: (token) => {
     set({ token });
 
-    if (token) { // ✅ Vérifier que token n'est pas null avant de l'utiliser
+    if (token) {
       setTimeout(() => {
-        // const dashboardStore = useDashboardStore.getState();
-        // if (!dashboardStore.dashboardLoaded) {
-        //   dashboardStore.fetchDashboardData(token);
-        // }
+        const dashboardStore = useDashboardStore.getState();
+        if (!dashboardStore.dashboardLoaded) {
+          dashboardStore.fetchDashboardData(token); // ✅ Token injecté
+        }
       }, 0);
     }
   },
 
-  // Mettre à jour les infos utilisateur
   setUserInfo: (info) => set((state) => ({ ...state, ...info })),
 
-  // Charger le token depuis les cookies (uniquement côté client)
   loadTokenFromCookies: () => {
-    set({ isClientLoaded: true }); // On indique que le client est chargé
+    set({ isClientLoaded: true });
 
     const token = Cookies.get("authToken") ?? null;
     const userRole = Cookies.get("userRole") ?? null;
@@ -42,15 +39,16 @@ export const useAuthStore = create<AuthState>((set) => ({
 
     set({ token, userRole, profilePicture, identifiant, email });
 
-    setTimeout(() => {
-      // const dashboardStore = useDashboardStore.getState();
-      // if (!dashboardStore.dashboardLoaded && token) {
-      //   dashboardStore.fetchDashboardData(token);
-      // }
-    }, 0);
+    if (token) {
+      setTimeout(() => {
+        const dashboardStore = useDashboardStore.getState();
+        if (!dashboardStore.dashboardLoaded) {
+          dashboardStore.fetchDashboardData(token); // ✅ Token injecté
+        }
+      }, 0);
+    }
   },
 
-  // Méthode de déconnexion avec appel API
   logout: async () => {
     try {
       set({ isLoggingOut: true });
@@ -74,6 +72,14 @@ export const useAuthStore = create<AuthState>((set) => ({
         Cookies.remove("email");
         localStorage.setItem("logoutSuccess", "true");
       }
+
+      useDashboardStore.setState({
+        projects: [],
+        metadata: { technologies: [], features: [], types: [], tags: [] },
+        dashboardLoaded: false,
+        loading: false,
+        error: null,
+      });
     } catch (error) {
       console.error("Erreur lors de la déconnexion :", error);
       set({ isLoggingOut: false });

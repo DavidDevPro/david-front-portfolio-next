@@ -1,4 +1,4 @@
-// Définir l'interface pour les données du formulaire de connexion
+// * Définir l'interface pour les données du formulaire de connexion
 export interface LoginFormData {
   identifiant: string;
   password: string;
@@ -25,12 +25,12 @@ export interface LogoutResponse {
   data: unknown[]; // Tableau de données (vide dans ce cas)
 }
 
-// Type pour les champs du formulaire
+// * Type pour les champs du formulaire
 export interface ResetPasswordFormInputs {
   password: string;
   confirmPassword: string;
 }
-
+// * Type pour les champs du formulaire
 export interface AuthSectionProps {
   formType: "login" | "forgot-password" | "reset-password";
   token?: string;

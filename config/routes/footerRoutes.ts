@@ -16,8 +16,7 @@ export const footerRoutes: FooterRouteSection[] = [
     label: "Me suivre",
     items: [
       { href: socialMediaIcons.find(icon => icon.label === "Linkedin")?.href || "", name: "Linkedin", external: true },
-      { href: socialMediaIcons.find(icon => icon.label === "Facebook")?.href || "", name: "Facebook", external: true },
-      { href: socialMediaIcons.find(icon => icon.label === "Twitter")?.href || "", name: "Twitter", external: true },
+      { href: socialMediaIcons.find(icon => icon.label === "Facebook")?.href || "", name: "Facebook", external: true },  
       { href: socialMediaIcons.find(icon => icon.label === "Instagram")?.href || "", name: "Instagram", external: true },
       { href: "/contact", name: "Contact" },
     ],

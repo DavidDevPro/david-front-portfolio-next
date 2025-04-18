@@ -3,6 +3,20 @@ export interface SidebarProps {
   setIsCollapsed: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+export interface SidebarNavProps {
+  items: {
+    href: string;
+    title: string;
+    icon: React.ReactNode;
+  }[];
+}
+
+export interface NavBarLink {
+  title: string; // Titre affiché dans la navigation
+  href: string; // Chemin de la route
+  icon: React.ReactNode; // Icône associée au lien
+}
+
 // Définir l'interface pour un lien de navigation
 export interface NavLink {
   title: string;
@@ -12,6 +26,7 @@ export interface NavLink {
   onClick?: () => void; // Ajout d'une propriété pour gérer les clics
   badge?: () => number;
 }
+
 // Définir l'interface pour un lien de navigation de la barre latérale, qui peut aussi inclure des sous-liens (sub)
 export interface SideLink extends NavLink {
   sub?: NavLink[];
@@ -38,9 +53,10 @@ export interface NavLinkDropdownProps {
   title: string;
   icon: React.ReactNode;
   label?: string;
-  sub: SideLink [];
+  sub: SideLink[];
   closeNav: () => void;
 }
+
 export interface NavLinkIconProps {
   title: string;
   icon: React.ReactNode;
@@ -48,7 +64,6 @@ export interface NavLinkIconProps {
   href: string; // href doit être une chaîne obligatoire
   closeNav: () => void;
   onClick?: () => void;
-  badge?: () => number;
 }
 
 export interface NavLinkIconDropdownProps {
@@ -57,4 +72,12 @@ export interface NavLinkIconDropdownProps {
   label?: string;
   sub: SideLink[]; // Liste des sous-liens
   closeNav: () => void; // Fonction pour fermer le menu
+}
+
+export interface SectionModeProps {
+  mode: "view" | "create" | "edit" | "profil" | "password" |
+  "fiscal-year" | "fiscal-year-create" | "fiscal-year-edit" |
+  "categories" | "categories-create" | "categories-edit" |
+  "subcategories" | "subcategories-create" | "subcategories-edit" |
+  "calendar-edit"
 }

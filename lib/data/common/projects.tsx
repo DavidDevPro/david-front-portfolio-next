@@ -1,7 +1,7 @@
 import { SiNextdotjs, SiTailwindcss, SiLaravel, SiHtml5, SiCss3, SiPhp, SiSass, SiVite, SiGoogle, SiGoogleanalytics } from "react-icons/si";
 import { JSX } from "react";
 import { BsFiletypePsd } from "react-icons/bs";
-import { MdAdminPanelSettings, MdArticle, MdBuild, MdContactMail, MdDashboard, MdDevices, MdNavigation, MdSecurity, MdSpeed, MdSupportAgent, MdViewList } from "react-icons/md";
+import { MdAdminPanelSettings, MdBuild, MdContactMail, MdDashboard, MdDevices, MdNavigation, MdSecurity, MdSpeed, MdSupportAgent, MdViewList } from "react-icons/md";
 import { CgDatabase } from "react-icons/cg";
 import { IoMdAnalytics } from "react-icons/io";
 import { FaCameraRetro, FaEnvelopeOpenText, FaHandshake, FaLock, FaServer } from "react-icons/fa";
@@ -189,7 +189,7 @@ export const projects: Project[] = [
 
         ],
         stats: { duration: "5 mois", performance: 88 },
-        link: "https://ma-compta-pro.fabwebprojects.fr/",
+        link: "https://portfolio.davidwebprojects.fr/",
         features: [
             { name: "Interface moderne et responsive", icon: <MdDevices /> },
             { name: "Optimisation SEO avancée", icon: <SiGoogleanalytics /> },

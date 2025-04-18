@@ -1,5 +1,5 @@
 import React from "react";
-import { Marquee } from "@/components/magicui/marquee";
+import { Marquee } from "@/components/ui/marquee";
 import { FaLaptopCode } from "react-icons/fa";
 import { TechnologiesUsedComponentProps } from "@/lib/types";
 import { motion } from "framer-motion";

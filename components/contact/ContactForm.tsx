@@ -225,7 +225,7 @@ export function ContactForm() {
             ariaLabel="Envoyer le formulaire de contact"
             text="Envoyer"
             isLoading={loading}
-            className="h-16 hover:border-card hover:text-secondary hover:bg-primary/70 hover:scale-102 will-change-transform"
+            className=" hover:border-card hover:text-secondary hover:bg-primary/70 bg-[#182642]"
           />
         </div>
       </form>

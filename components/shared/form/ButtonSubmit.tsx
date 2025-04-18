@@ -17,6 +17,7 @@ export const ButtonSubmit: FC<ButtonSubmitProps> = ({
   return (
     <div className="flex justify-center mb-4">
       <PrimaryButton
+        variant="thirdPortfolio"
         className={cn(className)} // 🔥 Passe correctement la classe dynamique ici !
         aria-label={ariaLabel}
         disabled={isLoading}
@@ -31,7 +32,7 @@ export const ButtonSubmit: FC<ButtonSubmitProps> = ({
           height={80}
           loading="eager"
           priority
-          className="animate-contactLogo shrink-0 w-[35px] h-[35px]"
+          className="animate-contactLogo mr-2 shrink-0 w-[35px] h-[35px]"
           style={{ animationDuration: "10s" }} />
         {text}
       </PrimaryButton>

@@ -20,11 +20,12 @@ export const AboutHeader = () => {
           </p>
           <div className="mt-8">
             <PrimaryButton
+              variant="thirdPortfolio"
               href="https://davidwebprojects.fr/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="David Web Projects site"
-              className="h-16 md:max-w-96 max-w-72 lg:mx-0 mx-auto hover:border-card hover:text-secondary hover:bg-accent/70 hover:scale-102 will-change-transform"
+              className="max-w-80 mx-auto"
             >
               <Image
                 src="/images/icons/click.png"

@@ -46,7 +46,8 @@ export function ProjectCard() {
                 {/* Bouton CTA */}
                 {project.link && (
                   <PrimaryButton
-                    className="md:py-2 lg:py-3 mt-6 shadow-md hover:bg-accent/80 hover:text-secondary max-w-[225px] md:max-w-[250px] lg:max-w-[275px] gap-2 mx-auto"
+                    variant="thirdPortfolio"
+                    className="py-6 mt-6 max-w-[225px] md:max-w-[250px] lg:max-w-[275px] mx-auto"
                   >
                     <Image
                       src="/images/icons/arrowButton.png"
@@ -55,7 +56,7 @@ export function ProjectCard() {
                       height={64}
                       loading="eager"
                       priority
-                      className="animate-arrowButton text-accent shrink-0 w-[30px] h-[30px]"
+                      className="animate-arrowButton mr-2 text-accent shrink-0 w-[30px] h-[30px]"
                       style={{ animationDuration: "12s" }} />
                     Voir le projet
                   </PrimaryButton>

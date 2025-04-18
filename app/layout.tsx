@@ -5,6 +5,7 @@ import "./globals.css";
 import "./index.css";
 import Script from "next/script";
 import { Toaster } from "@/components/ui/sonner";
+import ClientOnlyWrapper from "@/config/ClientOnlyWrapper";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -221,7 +222,9 @@ export default function RootLayout({
       </head>
       <body
         className={cn(poppins.variable, montserrat.variable, "font-sans h-full")}>
-        {children}
+        <ClientOnlyWrapper>
+          {children}
+        </ClientOnlyWrapper>
         <Toaster />
       </body>
     </html>
