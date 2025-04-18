@@ -1,24 +1,38 @@
 ---
-name: "Feature request"
-about: "Suggérer une amélioration ou une nouvelle fonctionnalité"
-title: "Feature: [Description courte]"
-labels: feature
+name: Feature Request
+about: Suggérer une nouvelle fonctionnalité ou amélioration
+title: "feature: [titre court ici]"
+labels: [feature]
 ---
 
-### Contexte :
+### 🎯 Objectif
 
-Décris le contexte et le besoin de la fonctionnalité.
+Décris en 1-2 phrases ce que tu veux ajouter ou améliorer.
 
-### Solution proposée :
+> Ex : Ajouter la version du backend dans les métadonnées pour affichage dans le footer.
 
-Une description claire de la solution que tu proposes.
+---
 
-### Alternatives envisagées :
+### ✅ Résultat attendu
 
-Décris d'autres solutions ou fonctionnalités que tu as envisagées.
+Quel est le comportement attendu une fois la feature en place ?
 
-### Tâches à réaliser :
+> Ex : Le footer affiche `Version front X • back Y du JJ/MM/AAAA` si les deux versions sont différentes.
 
-- [ ] Tâche 1
-- [ ] Tâche 2
-- [ ] Tâche 3
+---
+
+### 🧱 Ce que je compte modifier (optionnel)
+
+Liste rapide si besoin :
+
+- [ ] Store Zustand
+- [ ] Route `/api/dashboard`
+- [ ] Fichier `CopyrightText.tsx`
+
+---
+
+### 🔍 Suivi
+
+- [ ] Données disponibles dans l'API
+- [ ] Front récupère les infos
+- [ ] Affichage correct à l'écran

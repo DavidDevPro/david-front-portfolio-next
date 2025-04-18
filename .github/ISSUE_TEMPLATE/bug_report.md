@@ -1,39 +1,30 @@
 ---
-name: "Bug report"
-about: "Signaler un bug"
-title: "Bug: [Description courte]"
-labels: bug
+name: Bug Report
+about: Signaler un bug ou une anomalie
+title: "bug: [titre court ici]"
+labels: [bug]
 ---
 
-### Description du bug :
+### 🐞 Problème rencontré
 
-Une description claire et concise du bug.
+Décris le bug en 1-2 phrases + ajoute directement une ou plusieurs **captures d'écran** si utile.
 
-### Étapes pour reproduire :
+> Ex : Le montant validé en URSSAF pour Fabrice est celui de David.
 
-1. Allez à '...'
-2. Cliquez sur '...'
-3. Scrollez vers '...'
-4. Voyez l'erreur
+![Capture d'écran ici](URL)
 
-### Comportement attendu :
+---
 
-Une description claire de ce qui était attendu.
+### ✅ Comportement attendu
 
-### Captures d'écran :
+Décris ce qui aurait dû se passer.
 
-Si applicable, ajoutez des captures d'écran pour aider à expliquer le problème.
+> Ex : Le montant validé doit correspondre à l'utilisateur connecté.
 
-### Environnement :
+---
 
-- Système d'exploitation : [exemple]
-- Navigateur : [exemple]
+### 🧪 À vérifier / corriger
 
-### Tâches à réaliser :
-
-- [ ] Tâche 1
-- [ ] Tâche 2
-- [ ] Tâche 3
-
-\*\*Informations supplémentaires :
-Tout autre contexte supplémentaire ici.
+- [ ] Le bug est reproductible ?
+- [ ] Il concerne bien l'utilisateur connecté ?
+- [ ] Fix testé en local ?
