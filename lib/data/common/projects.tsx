@@ -66,7 +66,7 @@ export const projects: Project[] = [
         sections: [
             {
                 title: "Concepteur de sites web",
-                content: "Je suis David, développeur web et fondateur de David Web Projects. J’accompagne les entreprises et entrepreneurs dans la création de sites web sur mesure, en alliant performance, design et stratégie digitale. Mon objectif est de concevoir des plateformes optimisées pour le référencement, la rapidité et l’expérience utilisateur, en proposant des solutions adaptées aux besoins spécifiques de chaque projet"
+                content: "Je suis David, développeur web et fondateur de David Web Projects. J’accompagne les entreprises et entrepreneurs dans la création de sites web sur mesure, en alliant performance, design et stratégie digitale. Mon objectif est de concevoir des plateformes optimisées pour le référencement, la rapidité et l’expérience utilisateur, en proposant des solutions adaptées aux besoins spécifiques de chaque projet."
             },
             {
                 title: "Site vitrine David Web Projects",
@@ -86,9 +86,9 @@ export const projects: Project[] = [
             { name: "Design Responsive", icon: <MdDevices /> },
             { name: "SEO Optimisé", icon: <SiGoogle /> },
             { name: "Performances Améliorées", icon: <MdSpeed /> },
-            { name: "Hébergement Sécurisé", icon: <MdSecurity /> },
             { name: "Maintenance Continue", icon: <MdBuild /> },
             { name: "Support Personnalisé", icon: <MdSupportAgent /> },
+            { name: "Hébergement Sécurisé", icon: <MdSecurity /> },
         ],
         type: "full-dev",
 
