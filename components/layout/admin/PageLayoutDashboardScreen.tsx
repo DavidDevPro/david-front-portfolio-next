@@ -10,7 +10,7 @@ export const PageLayoutDashboardScreen: React.FC<PageLayoutProps> = ({
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen pt-14 md:pt-0">
       {/* Sidebar */}
       <SidebarAdmin isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
 

@@ -34,7 +34,7 @@ export const ProjectMain = ({ project }: ProjectMainProps) => {
               href={project.link}
               target="_blank"
               aria-label="Page du site web"
-              className=" border-secondary hover:border-accent hover:text-secondary bg-accent text-secondary hover:scale-102 will-change-transform"
+              className=" border-accent bg-[#182642] hover:border-accent hover:text-secondary text-card hover:scale-102 will-change-transform"
             >
               <Image
                 src="/images/logos/logo.png"

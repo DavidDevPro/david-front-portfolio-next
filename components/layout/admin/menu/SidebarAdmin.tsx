@@ -53,7 +53,7 @@ export const SidebarAdmin: React.FC<SidebarProps> = ({ isCollapsed, setIsCollaps
             )}
         >
             {/* Contenu principal de la sidebar */}
-            <div className={`bg-card h-full flex flex-col justify-between`}>
+            <div className={`bg-card h-full flex flex-col justify-between flex-1`}>
                 {/* Header avec Logo et Nom */}
                 <div className={cn("flex justify-center", { "": !isCollapsed })}>
                     <Link href="/" className="font-bold text-xl lg:text-xl flex items-center text-primary">
@@ -66,7 +66,7 @@ export const SidebarAdmin: React.FC<SidebarProps> = ({ isCollapsed, setIsCollaps
                                 loading="eager"
                                 width={500}
                                 height={500}
-                                className="object-cover"
+                                className="object-cover hidden md:block"
                             />
                         </div>
                     </Link>

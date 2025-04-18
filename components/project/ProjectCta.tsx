@@ -29,7 +29,7 @@ export function ProjectCTA() {
             target="_blank"
             aria-label="Page du site web"
             rel="noopener noreferrer"
-            className=" border-secondary hover:border-accent hover:text-secondary bg-accent text-secondary hover:scale-102 will-change-transform"
+            className=" border-accent bg-[#182642] hover:border-accent hover:text-secondary text-accent hover:scale-102 will-change-transform"
           >
             <Image
               src="/images/icons/enveloppe.png"
@@ -49,7 +49,7 @@ export function ProjectCTA() {
             target="_blank"
             aria-label="Page du site web"
             rel="noopener noreferrer"
-            className=" border-secondary hover:border-accent hover:text-secondary bg-accent text-secondary hover:scale-102 will-change-transform"
+            className=" border-accent bg-[#182642] hover:border-accent hover:text-secondary text-accent hover:scale-102 will-change-transform"
           >
             <Image
               src="/images/icons/devis.png"

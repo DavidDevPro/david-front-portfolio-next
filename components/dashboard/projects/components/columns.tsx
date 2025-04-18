@@ -70,14 +70,16 @@ export const useProjectColumns = (
             cell: ({ row }) => {
                 const image = row.original.image
                 return image ? (
-                    <Image
-                        src={image}
-                        alt="image principale"
-                        width={250}
-                        height={400}
-                        className="rounded cursor-pointer hover:scale-105 transition-transform"
-                        onClick={() => window.open(image, '_blank')}
-                    />
+                    <div className="flex justify-center py-2 px-2 bg-accent rounded-xl border border-secondary">
+                        <Image
+                            src={image}
+                            alt="image principale"
+                            width={250}
+                            height={400}
+                            className="rounded cursor-pointer hover:scale-102 transition-transform duration-500 will-change-transform"
+                            onClick={() => window.open(image, '_blank')}
+                        />
+                    </div>
                 ) : 'Aucune image'
             },
         },

@@ -67,7 +67,7 @@ export const PrimaryButton = React.forwardRef<
     const buttonClasses = cn(
       selectedClasses,
       "whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-      "disabled:pointer-events-none disabled:opacity-50 hover:bg-accent/80 h-10",
+      "disabled:pointer-events-none disabled:opacity-50 hover:bg-accent/80 h-[62px]",
       className
     );
 

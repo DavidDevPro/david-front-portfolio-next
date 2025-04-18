@@ -80,9 +80,9 @@ export function DataTable<TData extends { visible: boolean }, TValue>({
   return (
     <div className="space-y-4">
       {ToolbarComponent && <ToolbarComponent table={table} />}
-      <div className="rounded-md border bg-card">
+      <div className="border border-secondary/90 bg-card">
         <Table>
-          <TableHeader className="bg-blue-200 border-b border-gray-400 shadow-sm">
+          <TableHeader className="bg-accent border-b border-gray-400 shadow-sm">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (

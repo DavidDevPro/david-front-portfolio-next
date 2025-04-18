@@ -27,7 +27,7 @@ export const GoogleCalendarModal: React.FC<GoogleCalendarModalProps> = ({
         <PrimaryButton
           variant="thirdPortfolio"
           aria-label="prendre un rendez-vous"
-          className="h-16 hover:border-card hover:text-secondary hover:bg-primary/70 "
+          className="h-16 hover:border-card hover:text-secondary hover:bg-primary/70 bg-[#182642] "
         >
           <Image
             src="/images/icons/agenda.png"

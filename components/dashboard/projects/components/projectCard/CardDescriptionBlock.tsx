@@ -9,7 +9,7 @@ interface Props {
 
 export const CardDescriptionBlock = ({ description }: Props) => {
     return (
-        <div className="bg-white p-4 rounded border shadow-sm flex flex-col justify-center items-center text-center">
+        <div className="bg-background p-4 rounded border shadow-sm flex flex-col justify-center items-center text-center">
             <strong className="mb-2 text-sm">Description sur la Card :</strong>
             <p className="text-muted-foreground px-4">
                 {description || 'Non renseignée'}

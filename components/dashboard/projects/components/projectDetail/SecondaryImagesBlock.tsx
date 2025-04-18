@@ -29,18 +29,18 @@ export const SecondaryImagesBlock = ({ images, onAdd, onEdit, onDelete }: Props)
 
             {/* Affichage des images secondaires si disponibles */}
             {images.length > 0 ? (
-                <div className="flex gap-4 flex-wrap">
+                <div className="flex gap-6 flex-wrap">
                     {images.map((img, idx) => (
-                        <div key={idx} className="flex flex-col items-center space-y-1">
+                        <div key={idx} className="bg-accent border border-secondary/90 rounded-xl flex flex-col items-center space-y-1">
                             <Image
                                 src={img.src}
                                 alt={img.description || 'Image'}
-                                width={250}
+                                width={300}
                                 height={400}
-                                className="rounded cursor-pointer hover:scale-105 transition-transform"
+                                className=" m-2 p-4 cursor-pointer hover:scale-105 transition-transform duration-300 will-change-transform"
                                 onClick={() => window.open(img.src, '_blank')}
                             />
-                            <small className="text-sm text-muted-foreground text-center">
+                            <small className="text-sm text-secondary/90 text-center">
                                 {img.description}
                             </small>
                             <div className="flex gap-1">
