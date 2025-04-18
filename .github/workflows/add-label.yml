@@ -1,0 +1,18 @@
+name: Add Default Labels to Issues
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write # Donne les permissions nécessaires pour ajouter des labels
+
+jobs:
+  add_labels:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add Default Labels
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          labels: frontend

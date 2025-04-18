@@ -1,0 +1,54 @@
+name: Deploy Project to Infomaniak via FTP
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Étape 1 : Récupération du code source
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Étape 2 : Nettoyer le projet
+      - name: Nettoyer le projet
+        run: rm -rf .next node_modules
+
+      # Étape 3 : Installer les dépendances proprement
+      - name: Réinstaller les dépendances
+        run: npm ci
+
+      # Étape 4 : Construire l'application avec les variables d'environnement
+      - name: Construire le projet
+        run: npm run build
+        env:
+          NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL }}
+          NEXT_PUBLIC_IMAGE_BASE_URL: ${{ vars.NEXT_PUBLIC_IMAGE_BASE_URL }}
+
+      # Étape 5 : Vérifier les fichiers générés après exclusions
+      - name: Vérifier les fichiers prêts à être déployés
+        run: |
+          echo "Fichiers prêts à être déployés :"
+          find . -type f \
+            -not -path "*/.git/*" \
+            -not -path "*/.github/*" \
+            -not -path "*/node_modules/*" \
+            -not -name "*.env*" \
+            -not -name "README.md" \
+            -not -name "*.log"
+
+      # Étape 6 : Déployer sur Infomaniak via FTP
+      - name: Déployer via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: 3j8ufs.ftp.infomaniak.com
+          username: ${{ secrets.INFOMANIAK_USER }}
+          password: ${{ secrets.INFOMANIAK_PASSWORD }}
+          protocol: ftps
+          local-dir: ./ # Envoie tout, y compris .next
+          server-dir: /sites/porfolio/ # Dossier cible sur le serveur
+
