@@ -14,41 +14,64 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Étape 2 : Nettoyer le projet
+      # Étape 2 : Nettoyage du projet
       - name: Nettoyer le projet
         run: rm -rf .next node_modules
 
-      # Étape 3 : Installer les dépendances proprement
+      # Étape 3 : Réinstallation des dépendances
       - name: Réinstaller les dépendances
         run: npm ci
 
-      # Étape 4 : Construire l'application avec les variables d'environnement
-      - name: Construire le projet
-        run: npm run build
-        env:
-          NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL }}
-          NEXT_PUBLIC_IMAGE_BASE_URL: ${{ vars.NEXT_PUBLIC_IMAGE_BASE_URL }}
+      # Étape 4 : Génération du fichier .env.production pour le build
+      - name: Générer .env.production
+        run: |
+          echo "NEXT_PUBLIC_API_URL=\"${{ vars.NEXT_PUBLIC_API_URL }}\"" >> .env.production
+          echo "NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=\"${{ vars.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}\"" >> .env.production
+          echo "NEXT_PUBLIC_IMAGE_BASE_URL=\"${{ vars.NEXT_PUBLIC_IMAGE_BASE_URL }}\"" >> .env.production
+          echo "NEXT_PUBLIC_APP_NAME=\"${{ vars.NEXT_PUBLIC_APP_NAME }}\"" >> .env.production
+          echo "NEXT_PUBLIC_APP_DEV=\"${{ vars.NEXT_PUBLIC_APP_DEV }}\"" >> .env.production
+          echo "NEXT_PUBLIC_APP_MAIL=\"${{ vars.NEXT_PUBLIC_APP_MAIL }}\"" >> .env.production
+          echo "NEXT_PUBLIC_APP_ADRESS=\"${{ vars.NEXT_PUBLIC_APP_ADRESS }}\"" >> .env.production
+          echo "NEXT_PUBLIC_APP_ADRESS2=\"${{ vars.NEXT_PUBLIC_APP_ADRESS2 }}\"" >> .env.production
+          echo "NEXT_PUBLIC_APP_ADRESS3=\"${{ vars.NEXT_PUBLIC_APP_ADRESS3 }}\"" >> .env.production
+          echo "NEXT_PUBLIC_APP_TEL=\"${{ vars.NEXT_PUBLIC_APP_TEL }}\"" >> .env.production
+          echo "NEXT_PUBLIC_APP_SIRET=\"${{ vars.NEXT_PUBLIC_APP_SIRET }}\"" >> .env.production
 
-      # Étape 5 : Vérifier les fichiers générés après exclusions
-      - name: Vérifier les fichiers prêts à être déployés
+      # Étape 5 : Build du projet (avec .env.production chargé)
+      - name: Construire le projet
+        env:
+          NODE_ENV: production
+        run: npm run build
+
+      # Étape 6 : Supprimer .env.production après le build
+      - name: Supprimer .env.production
+        run: rm -f .env.production
+
+      # Étape 7 : Vérification des fichiers générés après exclusions
+      - name: Vérifier les fichiers générés
         run: |
           echo "Fichiers prêts à être déployés :"
           find . -type f \
             -not -path "*/.git/*" \
             -not -path "*/.github/*" \
             -not -path "*/node_modules/*" \
+            -not -path "*/.husky/*" \
             -not -name "*.env*" \
             -not -name "README.md" \
             -not -name "*.log"
 
-      # Étape 6 : Déployer sur Infomaniak via FTP
+      # Étape 8 : Déploiement sur Infomaniak via FTP
       - name: Déployer via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: 3j8ufs.ftp.infomaniak.com
+          server: ${{ secrets.INFOMANIAK_SERVER }}
           username: ${{ secrets.INFOMANIAK_USER }}
           password: ${{ secrets.INFOMANIAK_PASSWORD }}
-          protocol: ftps
-          local-dir: ./ # Envoie tout, y compris .next
-          server-dir: /sites/porfolio/ # Dossier cible sur le serveur
-
+          protocol: ftp
+          local-dir: ./ # Dossier local contenant le build
+          server-dir: ${{ secrets.SERVER_DIR }}
+          exclude: |
+            **/.git*
+            **/.git/**
+            **/.github/**
+            **/.husky/**
