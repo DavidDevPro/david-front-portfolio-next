@@ -29,7 +29,7 @@ export function ProjectCard() {
           >
             <div className="relative z-0 bg-[url('/images/projects/projectBanner.webp')] bg-cover before:absolute before:inset-0 before:bg-gradient-to-b before:from-[#192846]/60 before:via-[#192846]/70 before:to-[#192846]/80 w-full max-w-lg border border-gray-300/50 rounded-2xl shadow-md shadow-gray-500/50 transition-all duration-300 flex flex-col overflow-hidden mx-auto cursor-pointer h-full">
               {/* Conteneur Image avec l'effet Scale appliqué uniquement à l'image */}
-              < div className="relative w-full h-[400px] overflow-hidden cursor-pointer" >
+              < div className="relative  overflow-hidden cursor-pointer" >
                 <Image
                   src={project.image}
                   alt={project.title}

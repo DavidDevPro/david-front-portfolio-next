@@ -73,24 +73,20 @@ export const Hero: React.FC = () => {
         className="before:absolute before:inset-0 before:bg-gradient-to-b before:from-[#192846]/10 before:via-[#192846]/35 before:to-[#192846]/60 inset-0 mt-[100px] fixed top-0 left-0 w-full min-h-[70vh] -z-50 border-none m-0 will-change-opacity"
         aria-hidden="true"
       >
-        <picture>
-          <source srcSet="/images/img/hero-large.webp" type="image/webp" />
-          <source srcSet="/images/imd/hero-large.jpg" type="image/jpeg" />
-          <Image
-            src="/images/img/hero-large.jpg"
-            alt={`section hero du portfolio ${APP_NAME}`}
-            width={1920}
-            height={1151}
-            quality={80}
-            sizes="(max-width: 768px) 100vw, 
-            (max-width: 1200px) 50vw, 
-            33vw"
-            priority
-            loading="eager"
-            aria-label={`section hero du portfolio ${APP_NAME}`}
-            className="h-full w-full object-cover object-center border-none "
-          />
-        </picture>
+
+
+        <Image
+          src="/images/img/hero-large.jpg"
+          alt={`section hero du portfolio ${APP_NAME}`}
+          width={1920}
+          height={1151}
+          quality={80}
+          priority
+          loading="eager"
+          aria-label={`section hero du portfolio ${APP_NAME}`}
+          className="h-full w-full object-cover object-center border-none "
+        />
+
         <div className="absolute inset-0 bg-gradient-to-b from-secondary/10 via-secondary/40 to-transparent"></div>
       </div>
 

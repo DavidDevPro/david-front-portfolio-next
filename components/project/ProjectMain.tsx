@@ -20,7 +20,8 @@ export const ProjectMain = ({ project }: ProjectMainProps) => {
                 alt={"image d'une flèche"}
                 width={64}
                 height={64}
-                loading="lazy"
+                loading="eager"
+                priority
                 className="animate-arrowButton shrink-0 w-[40px] h-[40px]"
                 style={{ animationDuration: "10s" }} />
               {section.title}</h3>
@@ -41,7 +42,8 @@ export const ProjectMain = ({ project }: ProjectMainProps) => {
                 alt={"image du logo"}
                 width={80}
                 height={80}
-                loading="lazy"
+                loading="eager"
+                priority
                 className="animate-contactLogo shrink-0 w-[50px] h-[50px]"
                 style={{ animationDuration: "10s" }} />
               <span>Voir le site</span>
