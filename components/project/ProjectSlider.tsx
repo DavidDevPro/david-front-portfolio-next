@@ -25,8 +25,8 @@ export const ProjectSlider: React.FC<ProjectSliderProps> = ({ images, title }) =
   }, [nextSlide]);
 
   return (
-    <div className="px-4 md:px-6 max-w-[1200px] h-[600px]  w-full mx-auto">
-      <div className="relative  w-full h-full  rounded-xl overflow-hidden border border-card shadow-md shadow-gray-400/50">
+    <div className="px-4 md:px-6 max-w-[1200px] h-[600px] w-full mx-auto">
+      <div className="relative w-full h-full rounded-xl overflow-hidden border border-card shadow-md shadow-gray-400/50">
         {images.map((img, index) => (
           <Image
             key={index}
@@ -34,7 +34,7 @@ export const ProjectSlider: React.FC<ProjectSliderProps> = ({ images, title }) =
             alt={title}
             width={1200}
             height={600}
-            className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${index === currentIndex ? "opacity-100" : "opacity-0"
+            className={`absolute w-full h-full top-0 left-0 object-cover transition-opacity duration-1000 ${index === currentIndex ? "opacity-100" : "opacity-0"
               }`}
           />
         ))}
