@@ -58,10 +58,9 @@ jobs:
           local-dir: ./ # Dossier local contenant le build
           server-dir: ${{ secrets.SERVER_DIR }} # Répertoire FTP distant
           exclude: |
-            **/.git
-            **/.git/**
-            **/.github/**
-            **/.husky/**
-            **/node_modules/**
-            **/*.env*
-            README.md
+            .git*
+             .github/*
+             .husky/*
+             node_modules/*
+             *.env*
+             README.md
