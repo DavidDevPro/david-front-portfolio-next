@@ -69,7 +69,7 @@ export const metadata: Metadata = {
       "Développeur Web Freelance - Portfolio DavidWebProjects | David CHANGEA",
     images: [
       {
-        url: "https://portfolio.davidwebprojects.fr/images/og-image.jpg",
+        url: "https://portfolio.davidwebprojects.fr/images/schemas/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Développeur Web Freelance - Portfolio DavidWebProjects | David CHANGEA",
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
       "Portfolio David CHANGEA | Développeur Web Freelance Front-End & Full-Stack - React, SEO, Hébergement - Méthode Agile",
     description:
       "Développeur web freelance spécialisé en React, je propose des services de création de sites web sur mesure, ainsi que d'optimisation SEO et de performance. Pour en savoir plus sur mes réalisations, je vous invite à consulter mon portfolio.",
-    images: "https://portfolio.davidwebprojects.fr/images/twitter-image.jpg",
+    images: "https://portfolio.davidwebprojects.fr/images/schemas/twitter-image.jpg",
   },
   alternates: {
     canonical: "https://portfolio.davidwebprojects.fr/",
@@ -103,7 +103,7 @@ export default function RootLayout({
             "@context": "http://schema.org",
             "@type": "LocalBusiness",
             name: "David CHANGEA | David Web Projects",
-            image: "https://portfolio.davidwebprojects.fr/images/schema-image.jpg",
+            image: "https://portfolio.davidwebprojects.fr/images/schemas/schema-image.jpg",
             description:
               "Développeur web spécialisé dans React, création de sites web sur mesure, refonte de sites, optimisation SEO, hébergement, et performance web.",
             url: "https://portfolio.davidwebprojects.fr/",
