@@ -12,8 +12,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 4007",
-    "prepare": "if [ \"$NODE_ENV\" != \"production\" ]; then husky install; fi || true",
+    "start": "next start",
     "lint": "next lint",
     "postbuild": "next-sitemap"
   },
