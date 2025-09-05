@@ -113,7 +113,7 @@ export const projects: Project[] = [
             { name: "Sass", icon: <SiSass /> },
             { name: "Laravel", icon: <SiLaravel /> },
         ],
-        link: "https://portfolio.davidwebprojects.fr",
+        link: "https://portfoliov1.davidwebprojects.fr",
         sections: [
             {
                 title: "Mon portfolio version 1",
@@ -121,7 +121,7 @@ export const projects: Project[] = [
             },
             {
                 title: "Les projets",
-                content: "À travers ce site, je présente les projets que j’ai réalisés ainsi que les technologies que je maîtrise. Il illustre mon approche du développement web, alliant performance, design et optimisation pour répondre aux exigences du numérique."
+                content: "À travers ce site, je présente les projets que j’ai réalisé ainsi que les technologies que je maîtrise. Il illustre mon approche du développement web, alliant performance, design et optimisation pour répondre aux exigences du numérique."
             },
             {
                 title: "Prise de contact",
