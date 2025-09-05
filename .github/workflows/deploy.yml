@@ -14,22 +14,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # (conseillé) Aligner la version Node de la CI avec celle du serveur
+      - name: Use Node 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: "npm"
+
       # Étape 2 : Génération du fichier .env.production pour le build
       - name: Générer .env.production
         run: |
-          echo "NEXT_PUBLIC_API_URL=\"${{ vars.NEXT_PUBLIC_API_URL }}\"" >> .env.production
-          echo "NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=\"${{ vars.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}\"" >> .env.production
-          echo "NEXT_PUBLIC_IMAGE_BASE_URL=\"${{ vars.NEXT_PUBLIC_IMAGE_BASE_URL }}\"" >> .env.production
-          echo "NEXT_PUBLIC_APP_NAME=\"${{ vars.NEXT_PUBLIC_APP_NAME }}\"" >> .env.production
-          echo "NEXT_PUBLIC_APP_DEV=\"${{ vars.NEXT_PUBLIC_APP_DEV }}\"" >> .env.production
-          echo "NEXT_PUBLIC_APP_MAIL=\"${{ vars.NEXT_PUBLIC_APP_MAIL }}\"" >> .env.production
-          echo "NEXT_PUBLIC_APP_ADRESS=\"${{ vars.NEXT_PUBLIC_APP_ADRESS }}\"" >> .env.production
-          echo "NEXT_PUBLIC_APP_ADRESS2=\"${{ vars.NEXT_PUBLIC_APP_ADRESS2 }}\"" >> .env.production
-          echo "NEXT_PUBLIC_APP_ADRESS3=\"${{ vars.NEXT_PUBLIC_APP_ADRESS3 }}\"" >> .env.production
-          echo "NEXT_PUBLIC_APP_TEL=\"${{ vars.NEXT_PUBLIC_APP_TEL }}\"" >> .env.production
-          echo "NEXT_PUBLIC_APP_SIRET=\"${{ vars.NEXT_PUBLIC_APP_SIRET }}\"" >> .env.production
+          echo "NEXT_PUBLIC_API_URL=${{ vars.NEXT_PUBLIC_API_URL }}" >> .env.production
+          echo "NEXT_PUBLIC_IMAGE_BASE_URL=${{ vars.NEXT_PUBLIC_IMAGE_BASE_URL }}" >> .env.production
+          echo "NEXT_PUBLIC_APP_NAME=${{ vars.NEXT_PUBLIC_APP_NAME }}" >> .env.production
 
-      # Étape 3 : Installer uniquement les dépendances nécessaires au build
+      # Étape 3 : Installer les dépendances nécessaires au build
       - name: Installer les dépendances (prod + dev nécessaires au build)
         run: npm ci
 
@@ -43,9 +42,22 @@ jobs:
       - name: Supprimer .env.production
         run: rm -f .env.production
 
-      # Étape 6 : Afficher le nombre de fichiers à transférer
-      - name: Fichiers à transférer
-        run: find . -type f | wc -l
+      # Étape 6 : Préparer le dossier de déploiement (sans .next/cache)
+      - name: Préparer le dossier de déploiement
+        run: |
+          # 1) supprimer le cache Next (inutile en run)
+          rm -rf .next/cache
+          # 2) créer le dossier cible
+          mkdir -p deploy
+          # 3) copier uniquement ce qui sert à `next start`
+          cp -r .next deploy/.next
+          cp -r public deploy/public
+          cp package.json deploy/package.json
+          cp package-lock.json deploy/package-lock.json
+          # 4) double sécurité (si jamais le cache réapparaissait)
+          rm -rf deploy/.next/cache
+          # (optionnel) alléger : enlever les sourcemaps
+          find deploy -type f -name "*.map" -delete
 
       # Étape 7 : Déploiement sur Infomaniak via FTP
       - name: Déployer via FTP
@@ -55,13 +67,5 @@ jobs:
           username: ${{ secrets.INFOMANIAK_USER }}
           password: ${{ secrets.INFOMANIAK_PASSWORD }}
           protocol: ftp
-          local-dir: ./ # Dossier local contenant le build
-          server-dir: ${{ secrets.SERVER_DIR }} # Répertoire FTP distant
-          exclude: |
-            **/.git
-            **/.git/**
-            **/.github/**
-            **/.husky/**
-            **/node_modules/**
-            **/*.env*
-            README.md
+          local-dir: deploy/
+          server-dir: ${{ secrets.SERVER_DIR }}

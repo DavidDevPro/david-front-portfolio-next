@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import { Marquee } from "@/components/ui/marquee";
 import { FaLaptopCode } from "react-icons/fa";

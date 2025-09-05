@@ -6,14 +6,13 @@
     "email": "contact@davidwebprojects.fr",
     "url": "https://github.com/DavidDevPro"
   },
-  "version": "2.0.3",
-  "releaseDate": "22/04/2025",
+  "version": "2.0.4",
+  "releaseDate": "05/09/2025",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 4001",
-    "prepare": "if [ \"$NODE_ENV\" != \"production\" ]; then husky install; fi || true",
+    "start": "next start",
     "lint": "next lint",
     "postbuild": "next-sitemap"
   },

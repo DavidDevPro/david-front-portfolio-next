@@ -25,7 +25,7 @@ export function ProjectCTA() {
           {/* Bouton 1 : "Me Contacter" */}
           <PrimaryButton
             variant="thirdPortfolio"
-            href="https://portfolio.davidwebprojects.fr/#contact"
+            href="/contact"
             target="_blank"
             aria-label="Page du site web"
             rel="noopener noreferrer"
