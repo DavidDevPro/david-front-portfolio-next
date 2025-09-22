@@ -290,50 +290,56 @@ export const projects: Project[] = [
     },
     {
         id: 6,
-        slug: "garage-auto-street",
-        title: "Garage Auto Street",
-        description: "Site vitrine automobile avec administration",
-        image: "/images/projects/auto_street_cover.webp",
+        slug: "sauves-ton-phones",
+        title: "Sauves Ton Phones",
+        description: "Site vitrine Sauves Ton Phones",
+        image: "/images/projects/sauvestonphones_cover.webp",
         images: [
-            "/images/projects/auto_street_1.webp",
-            "/images/projects/auto_street_2.webp",
-            "/images/projects/auto_street_3.webp",
-            "/images/projects/auto_street_4.webp",
-            "/images/projects/auto_street_5.webp"
+            "/images/projects/sauvestonphones_1.webp",
+            "/images/projects/sauvestonphones_2.webp",
+            "/images/projects/sauvestonphones_3.webp",
+            "/images/projects/sauvestonphones_4.webp",
+            "/images/projects/sauvestonphones_5.webp",
+            "/images/projects/sauvestonphones_6.webp",
+            "/images/projects/sauvestonphones_7.webp",
+            "/images/projects/sauvestonphones_8.webp",
+            "/images/projects/sauvestonphones_9.webp",
+            "/images/projects/sauvestonphones_10.webp",
 
         ],
         technologies: [
-            { name: "Vite.js", icon: <SiVite /> },
-            { name: "Sass", icon: <SiSass /> },
+            { name: "Next.js", icon: <SiNextdotjs /> },
+            { name: "Tailwind", icon: <SiTailwindcss /> },
             { name: "Laravel", icon: <SiLaravel /> },
         ],
         sections: [
             {
                 title: "Détails du projet",
-                content: "Ce projet a été conçu et développé entièrement sur mesure en utilisant React, afin de répondre précisément aux besoins spécifiques d'un ami. Chaque composant a été soigneusement élaboré pour garantir une performance optimale et une expérience utilisateur fluide et intuitive."
+                content: "Ce projet a été conçu et développé entièrement sur mesure avec React, dans le but de répondre avec précision aux attentes spécifiques d’un ami. Chaque composant a été pensé et façonné avec soin afin d’assurer des performances optimales et une expérience utilisateur à la fois fluide, élégante et intuitive."
             },
             {
-                title: "Le Backend",
-                content: "De plus, la partie back-end est gérée par Laravel, ce qui assure une robustesse et une sécurité accrues, ainsi qu'une intégration harmonieuse entre le client et le serveur."
+                title: "Le Projet",
+                content: "Aucune maquette n’avait été définie au préalable : seule une idée, un secteur d’activité et une vision. C’est donc par la créativité et l’imagination que ce projet a pris forme, chaque ligne de code traduisant une intention, chaque fonctionnalité donnant vie à une ambition. Ce développement s’inscrit dans une démarche artistique autant que technique, façonnant un outil unique et parfaitement adapté."
             },
             {
-                title: "L'Admin",
-                content: "L'administrateur a la capacité de se connecter de manière sécurisée et d'accéder à une interface dédiée, lui permettant de créer, modifier et supprimer ses fiches produits avec une grande facilité."
+                title: "La Landing Page",
+                content: "Le site a été pensé comme une véritable vitrine concentrée en une seule page : la landing page. Elle présente avec clarté et raffinement l’ensemble des services proposés, allant de la réparation de smartphones, trottinettes et consoles de jeux jusqu’aux ordinateurs et tout autre matériel électronique. Cette mise en scène condensée permet à l’utilisateur de saisir en un instant l’essence de l’activité, tout en bénéficiant d’une navigation limpide et engageante."
             },
             {
-                title: "BDD & SQL",
-                content: "Cette gestion est rendue possible grâce à une base de données SQL robuste et active, assurant ainsi une gestion efficace et fiable des données produits."
+                title: "La Technologie utilisée",
+                content: "Le projet s’appuie sur un socle technologique de pointe : Next.js, Tailwind CSS, Laravel et TypeScript. Ces outils, parmi les plus modernes et performants du développement web, garantissent robustesse, rapidité et évolutivité. L’ensemble est déployé sur une infrastructure cloud puissante et hautement sécurisée, assurant stabilité et sérénité pour l’avenir."
             }
+
         ],
-        link: "https://portfolio.fabwebprojects.fr/autostreet/",
-        stats: { duration: "3 mois", performance: 95 },
+        link: "https://sauvestonphones.fr/",
+        stats: { duration: "1 mois", performance: 95 },
         features: [
             { name: "Design Responsive", icon: <MdDevices /> },
-            { name: "Interface Interactive", icon: <SiTailwindcss /> },
+            { name: "Navigation Intuitive", icon: <MdNavigation /> },
             { name: "SEO Optimisé", icon: <SiGoogleanalytics /> },
             { name: "Navigation Fluide", icon: <MdNavigation /> },
-            { name: "Administration Sécurisée", icon: <MdAdminPanelSettings /> },
-            { name: "Backend Robuste", icon: <FaServer /> },
+            { name: "Performances Améliorées", icon: <MdSpeed /> },
+            { name: "Hébergement Sécurisé", icon: <MdSecurity /> },
         ],
         type: "full-dev",
     },

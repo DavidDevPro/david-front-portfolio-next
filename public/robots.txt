@@ -2,8 +2,18 @@
 User-agent: *
 Allow: /
 
+# Googlebot-Image
+User-agent: Googlebot-Image
+Allow: /
+
+# Googlebot-News
+User-agent: Googlebot-News
+Disallow: /mentions
+Disallow: /rgpd
+
 # Host
 Host: https://portfolio.davidwebprojects.fr
 
 # Sitemaps
 Sitemap: https://portfolio.davidwebprojects.fr/sitemap.xml
+Sitemap: https://davidwebprojects.fr/sitemap.xml
