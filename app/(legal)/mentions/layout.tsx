@@ -2,45 +2,50 @@ import { PageLayoutScreen } from "@/components/layout/common";
 import { PageLayoutProps } from "@/lib/types";
 import { Metadata } from "next";
 
+export function generateViewport() {
+  return "width=device-width, initial-scale=1, maximum-scale=1";
+}
+
 export const metadata: Metadata = {
-  title: "Mentions Légales - David Web Projects | David CHANGEA",
+  title: "Mentions Légales - DavidWebProjects | David CHANGEA",
   description:
-    "Découvrez les mentions légales du site David Web Projects. Informations sur le propriétaire, les conditions d'utilisation, et la protection des données.",
-  robots: {
-    index: true,
-    follow: true,
-  },
+    "Découvrez les mentions légales du site DavidWebProjects : informations sur le propriétaire, conditions d'utilisation et protection des données personnelles.",
+  keywords: [
+    "mentions légales",
+    "DavidWebProjects",
+    "conditions d'utilisation",
+    "protection des données",
+    "RGPD",
+    "David CHANGEA",
+  ],
+  robots: { index: true, follow: true },
   alternates: {
     canonical: "https://davidwebprojects.fr/mentions-legales",
   },
-  keywords: [
-    "mentions légales",
-    "David Web Projects",
-    "conditions d'utilisation",
-    "protection des données",
-    "David CHANGEA",
-  ],
   openGraph: {
     type: "website",
-    title: "Mentions Légales - David Web Projects | David CHANGEA",
+    title: "Mentions Légales - DavidWebProjects | David CHANGEA",
     description:
-      "Consultez les informations légales et les conditions d'utilisation du site David Web Projects.",
+      "Consultez les informations légales, conditions d'utilisation et protection des données sur le site DavidWebProjects.",
     url: "https://davidwebprojects.fr/mentions-legales",
+    siteName: "DavidWebProjects | David CHANGEA",
     images: [
       {
-        url: "https://davidwebprojects.fr/schemas/og-mentions-legales.jpg",
+        url: "https://davidwebprojects.fr/schemas/og-image.jpg",
         width: 1200,
-        height: 603,
-        alt: "Mentions Légales - David Web Projects",
+        height: 630,
+        alt: "Mentions Légales - DavidWebProjects",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mentions Légales - David Web Projects | David CHANGEA",
+    title: "Mentions Légales - DavidWebProjects | David CHANGEA",
     description:
-      "Consultez les informations légales et les conditions d'utilisation du site David Web Projects.",
-    images: ["https://davidwebprojects.fr/schemas/twitter-mentions-legales.jpg"],
+      "Informations légales et conditions d'utilisation du site DavidWebProjects, avec protection des données personnelles.",
+    images: [
+      "https://davidwebprojects.fr/schemas/twitter-image.jpg",
+    ],
   },
 };
 

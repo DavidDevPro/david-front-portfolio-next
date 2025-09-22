@@ -27,6 +27,13 @@ jobs:
           echo "NEXT_PUBLIC_API_URL=${{ vars.NEXT_PUBLIC_API_URL }}" >> .env.production
           echo "NEXT_PUBLIC_IMAGE_BASE_URL=${{ vars.NEXT_PUBLIC_IMAGE_BASE_URL }}" >> .env.production
           echo "NEXT_PUBLIC_APP_NAME=${{ vars.NEXT_PUBLIC_APP_NAME }}" >> .env.production
+          echo "NEXT_PUBLIC_APP_DEV=${{ vars.NEXT_PUBLIC_APP_DEV }}" >> .env.production
+          echo "NEXT_PUBLIC_APP_MAIL=${{ vars.NEXT_PUBLIC_APP_MAIL }}" >> .env.production
+          echo "NEXT_PUBLIC_APP_ADRESS=${{ vars.NEXT_PUBLIC_APP_ADRESS }}" >> .env.production
+          echo "NEXT_PUBLIC_APP_ADRESS2=${{ vars.NEXT_PUBLIC_APP_ADRESS2 }}" >> .env.production
+          echo "NEXT_PUBLIC_APP_ADRESS3=${{ vars.NEXT_PUBLIC_APP_ADRESS3 }}" >> .env.production
+          echo "NEXT_PUBLIC_APP_TEL=${{ vars.NEXT_PUBLIC_APP_TEL }}" >> .env.production
+          echo "NEXT_PUBLIC_APP_SIRET=${{ vars.NEXT_PUBLIC_APP_SIRET }}" >> .env.production
 
       # Étape 3 : Installer les dépendances nécessaires au build
       - name: Installer les dépendances (prod + dev nécessaires au build)

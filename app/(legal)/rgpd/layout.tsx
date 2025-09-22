@@ -2,47 +2,51 @@ import { PageLayoutScreen } from "@/components/layout/common";
 import { PageLayoutProps } from "@/lib/types";
 import { Metadata } from "next";
 
+export function generateViewport() {
+  return "width=device-width, initial-scale=1, maximum-scale=1";
+}
+
 export const metadata: Metadata = {
-  title: "Politique de Confidentialité - David Web Projects | David CHANGEA",
+  title: "Politique de Confidentialité - DavidWebProjects | David CHANGEA",
   description:
-    "Découvrez la politique de confidentialité de David Web Projects. Informez-vous sur la collecte, l'utilisation et la protection de vos données personnelles.",
-  robots: {
-    index: true,
-    follow: true,
-  },
-  alternates: {
-    canonical: "https://davidwebprojects.fr/politique-confidentialite",
-  },
+    "Découvrez la politique de confidentialité de DavidWebProjects. Informez-vous sur la collecte, l'utilisation et la protection de vos données personnelles.",
   keywords: [
     "politique de confidentialité",
     "protection des données",
     "données personnelles",
-    "David Web Projects",
+    "DavidWebProjects",
     "David CHANGEA",
     "vie privée",
     "gestion des données",
   ],
+  robots: { index: true, follow: true },
+  alternates: {
+    canonical: "https://davidwebprojects.fr/politique-confidentialite",
+  },
   openGraph: {
     type: "website",
-    title: "Politique de Confidentialité - David Web Projects | David CHANGEA",
+    title: "Politique de Confidentialité - DavidWebProjects | David CHANGEA",
     description:
-      "Découvrez la politique de confidentialité de David Web Projects, incluant la gestion des données personnelles et la protection de votre vie privée.",
+      "Découvrez la politique de confidentialité de DavidWebProjects, incluant la gestion des données personnelles et la protection de votre vie privée.",
     url: "https://davidwebprojects.fr/politique-confidentialite",
+    siteName: "DavidWebProjects | David CHANGEA",
     images: [
       {
-        url: "https://davidwebprojects.fr/schemas/og-privacy.jpg",
+        url: "https://davidwebprojects.fr/schemas/og-image.jpg",
         width: 1200,
-        height: 602,
-        alt: "Politique de Confidentialité - David Web Projects",
+        height: 630,
+        alt: "Politique de Confidentialité - DavidWebProjects",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Politique de Confidentialité - David Web Projects | David CHANGEA",
+    title: "Politique de Confidentialité - DavidWebProjects | David CHANGEA",
     description:
-      "Découvrez la politique de confidentialité de David Web Projects, incluant la gestion des données personnelles et la protection de votre vie privée.",
-    images: ["https://davidwebprojects.fr/schemas/twitter-privacy.jpg"],
+      "Découvrez la politique de confidentialité de DavidWebProjects, incluant la gestion des données personnelles et la protection de votre vie privée.",
+    images: [
+      "https://davidwebprojects.fr/schemas/twitter-image.jpg",
+    ],
   },
 };
 

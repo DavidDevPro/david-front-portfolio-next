@@ -1,32 +1,64 @@
-// Importation de la configuration du site à partir de .env
 const siteUrl = process.env.SITE_URL || "https://portfolio.davidwebprojects.fr";
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: siteUrl, // Base URL du site
-  generateRobotsTxt: true, // Générer automatiquement le fichier robots.txt
-  sitemapSize: 7000, // Taille maximale d'un fichier sitemap avant division
-  changefreq: "daily", // Fréquence de mise à jour des pages
-  priority: 0.7, // Priorité par défaut des URL
-  exclude: ["/404"], // Utilisez 'exclude' uniquement pour des chemins spécifiques
+  siteUrl,
+  generateRobotsTxt: true,
+  sitemapSize: 7000,
+  changefreq: "daily",
+  priority: 0.7,
+  autoLastmod: true,
+  exclude: ["/404"],
 
-  // Fonction de transformation pour générer des liens dynamiques
+  additionalPaths: async (config) => [
+    await config.transform(config, "/about"),
+    await config.transform(config, "/projects"),
+    await config.transform(config, "/projects/davidwebprojects-website"),
+    await config.transform(config, "/projects/portfolio-v1"),
+    await config.transform(config, "/projects/portfolio-v2"),
+    await config.transform(config, "/projects/office-notarial-le-soler"),
+    await config.transform(config, "/projects/le-chateau"),
+    await config.transform(config, "/projects/sauves-ton-phones"),
+    await config.transform(config, "/contact"),
+    await config.transform(config, "/mentions"),
+    await config.transform(config, "/rgpd"),
+  ],
+
   transform: async (config, path) => {
+    let priority = config.priority;
+    let changefreq = config.changefreq;
+
+    if (path === "/") {
+      priority = 1.0;
+      changefreq = "daily";
+    } else if (path.startsWith("/projects")) {
+      priority = 0.8;
+      changefreq = "weekly";
+    } else if (path === "/about" || path === "/contact") {
+      priority = 0.7;
+      changefreq = "monthly";
+    } else if (path === "/mentions" || path === "/rgpd") {
+      priority = 0.3;
+      changefreq = "yearly";
+    }
+
     return {
-      loc: path, // URL générée automatiquement
-      changefreq: config.changefreq, // Fréquence de mise à jour par défaut
-      priority: config.priority, // Priorité par défaut
+      loc: path,
+      changefreq,
+      priority,
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
     };
   },
 
-  // Configuration des options du fichier robots.txt
   robotsTxtOptions: {
     policies: [
-      { userAgent: "*", allow: "/" }, // Autoriser tous les robots sur toutes les pages
+      { userAgent: "*", allow: "/" },
+      { userAgent: "Googlebot-Image", allow: "/" },
+      { userAgent: "Googlebot-News", disallow: ["/mentions", "/rgpd"] },
     ],
     additionalSitemaps: [
-      `${siteUrl}/sitemap.xml`, // Ajouter d'autres sitemaps si nécessaire
+      `${siteUrl}/sitemap.xml`,
+      `https://davidwebprojects.fr/sitemap.xml`,
     ],
   },
 };
