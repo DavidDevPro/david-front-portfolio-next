@@ -1,10 +1,10 @@
 import { SiNextdotjs, SiTailwindcss, SiLaravel, SiHtml5, SiCss3, SiPhp, SiSass, SiVite, SiGoogle, SiGoogleanalytics } from "react-icons/si";
 import { JSX } from "react";
 import { BsFiletypePsd } from "react-icons/bs";
-import { MdAdminPanelSettings, MdBuild, MdContactMail, MdDashboard, MdDevices, MdNavigation, MdSecurity, MdSpeed, MdSupportAgent, MdViewList } from "react-icons/md";
+import { MdBuild, MdContactMail, MdDashboard, MdDevices, MdNavigation, MdSecurity, MdSpeed, MdSupportAgent, MdViewList } from "react-icons/md";
 import { CgDatabase } from "react-icons/cg";
 import { IoMdAnalytics } from "react-icons/io";
-import { FaCameraRetro, FaEnvelopeOpenText, FaHandshake, FaLock, FaServer } from "react-icons/fa";
+import { FaCameraRetro, FaEnvelopeOpenText, FaHandshake, FaLock } from "react-icons/fa";
 import { AiFillHome } from "react-icons/ai";
 import { FiLayers } from "react-icons/fi";
 import { RiPencilRuler2Line } from "react-icons/ri";
