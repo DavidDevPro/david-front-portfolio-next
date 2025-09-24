@@ -4,9 +4,29 @@
 
 * {
   @apply font-poppins;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 body {
   color: var(--foreground);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+html {
+  scroll-behavior: smooth;
+}
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkgreen {
+  color: green;
+}
+.checkred {
+  color: red;
 }
 
 @layer utilities {

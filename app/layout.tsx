@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { cn } from "@/lib/utils";
 import { Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
-import "./index.css";
 import Script from "next/script";
 import { Toaster } from "@/components/ui/sonner";
 import ClientOnlyWrapper from "@/config/ClientOnlyWrapper";
@@ -21,6 +20,7 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
   display: "swap",
 });
+
 export function generateViewport() {
   return "width=device-width, initial-scale=1, maximum-scale=1";
 }
@@ -81,6 +81,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr" suppressHydrationWarning className="h-full">
       <head>
+        {/* ✅ Optimisation Lighthouse */}
+        {/* Preconnect pour Google Fonts (même si Next gère, Lighthouse veut le voir) */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+
         {/* JSON-LD Schema.org */}
         <Script id="schema-org-json-ld" type="application/ld+json">
           {JSON.stringify({
@@ -141,7 +146,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
 
       <body className={cn(poppins.variable, montserrat.variable, "font-sans h-full")}>
-        <ClientOnlyWrapper>{children}</ClientOnlyWrapper>
+        {<ClientOnlyWrapper>{children}</ClientOnlyWrapper>}
         <Toaster />
       </body>
     </html>
