@@ -100,11 +100,11 @@ export const Hero: React.FC = () => {
         {/* ✅ Main Image (picture pas nécessaire car Next/Image gère WebP) */}
         <div ref={imgRef} className="relative z-10">
           <Image
-            src="/images/img/boss.png"
+            src="/images/img/boss.webp"
             alt={heroData.imageAlt}
             className="w-[275px] h-[275px] lg:w-[300px] lg:h-[300px] object-cover rounded-full border shadow-gray-500/50 border-gray-600 shadow-md"
-            width={640}
-            height={640}
+            width={275}
+            height={275}
             loading="eager"
             priority
           />

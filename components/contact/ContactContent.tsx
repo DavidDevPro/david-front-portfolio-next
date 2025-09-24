@@ -9,7 +9,7 @@ export const ContactContent: React.FC = () => {
     <div className="w-full space-y-4 flex flex-col gap-2">
       <div className='w-full mx-auto mb-10'>
         <Image
-          src="/images/img/contact.jpg"
+          src="/images/img/contact.webp"
           alt="image de section contact"
           width={1200}
           height={686}
