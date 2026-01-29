@@ -6,8 +6,8 @@
     "email": "contact@davidwebprojects.fr",
     "url": "https://github.com/DavidDevPro"
   },
-  "version": "2.0.5",
-  "releaseDate": "22/12/2025",
+  "version": "2.0.6",
+  "releaseDate": "29/01/2026",
   "private": true,
   "scripts": {
     "dev": "next dev",
